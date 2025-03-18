@@ -1,10 +1,12 @@
 class ManejoCadenas:
 
     @staticmethod
-    def partirCadena(cadena, listaCadena):
+    def partirCadena(cadena):
         tamañoCadena1 = len(cadena)
+        listaCadena = []
         for letra in range(tamañoCadena1):
             listaCadena.extend(cadena[letra])
+        return listaCadena
         
     @staticmethod
     def estarContenida(listaCadena1, listaCadena2):

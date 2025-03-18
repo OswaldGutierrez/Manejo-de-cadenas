@@ -5,8 +5,6 @@ from manejoCadenas import ManejoCadenas as mc
 def abrirMenu():
     cadena1 = input("Cadena 1: ")
     cadena2 = input("Cadena 2: ")
-    listaCadena1 = []
-    listaCadena2 = []
     salirMenu = True
 
     while salirMenu:
@@ -23,8 +21,8 @@ def abrirMenu():
 
         match opcionMenu:
             case 1:
-                mc.partirCadena(cadena1, listaCadena1)
-                mc.partirCadena(cadena2, listaCadena2)
+                listaCadena1 = mc.partirCadena(cadena1)
+                listaCadena2 = mc.partirCadena(cadena2)
                 print(mc.estarContenida(listaCadena1, listaCadena2))
             case 2:
                 mc.moduloCadenas(cadena1)
