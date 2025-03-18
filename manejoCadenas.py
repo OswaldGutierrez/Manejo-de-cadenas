@@ -1,32 +1,39 @@
 class ManejoCadenas:
+      
+    @staticmethod
+    def ingresarCadenas(opc):
+        try:
+            salir = True
+            while salir:
+                if opc == 1:
+                    cadena1 = input("Cadena 1: ").strip()
+                    cadena2 = input("Cadena 2: ").strip()
+                else:
+                    cadena1 = input("Cadena 3: ").strip()
+                    cadena2 = input("Cadena 4: ").strip()
+                if cadena1 and cadena2:
+                    salir = False
+                    return cadena1, cadena2
+                else:
+                    print("Ingrese algún valor")
+        except Exception as e:
+            print(f"Ocurrio un error al ingresar las cadenas: {e}")
 
     @staticmethod
-    def partirCadena(cadena):
-        tamañoCadena1 = len(cadena)
-        listaCadena = []
-        for letra in range(tamañoCadena1):
-            listaCadena.extend(cadena[letra])
-        return listaCadena
-        
-    @staticmethod
-    def estarContenida(listaCadena1, listaCadena2):
-        listaAux = [] 
-        tamañoCadena1 = len(listaCadena1)
-        tamañoCadena2 = len(listaCadena2)
-        for i in range(tamañoCadena1):
-            for j in range(tamañoCadena2):
-                if listaCadena1[i] == listaCadena2[j]:
-                    listaAux.extend(listaCadena2[j])
+    def estarContenida(cadena1, cadena2):
+        try:
+            if cadena1 == cadena2:
+                return ("Las cadenas son iguales")
+            else:
+                cantVeces = cadena2.count(cadena1)
+                if cantVeces == 0:
+                    return (f"La cadena: {cadena1} no está contenido en la cadena: {cadena2}")
+                else:
+                    return (f"La cadena: {cadena1} si está contenida en la cadena: {cadena2}")
 
-        print(f"\tLa listaCadena1 es: {listaCadena1}\n\tLa listaCadena2 es: {listaCadena2}\n\tLa listaAux es: {listaAux}")
-
-        if listaCadena1 == listaCadena2:
-            return ("Las cadenas son iguales")
-        elif listaCadena1 == listaAux:
-            return("La cadena 1 está contenida en la cadena 2")
-        else:
-            return ("La cadena1 no está contenida en la cadena2")
-        
+        except Exception as e:
+            print(f"Ocurrió un error {e}")
+         
     @staticmethod   
     def moduloCadenas(cadena):
         tamañoCadena = len(cadena)
