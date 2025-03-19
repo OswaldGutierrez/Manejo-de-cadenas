@@ -22,6 +22,8 @@ class ManejoCadenas:
     @staticmethod
     def estarContenida(cadena1, cadena2):
         try:
+            cadena1 = cadena1.lower()
+            cadena2 = cadena2.lower()
             if cadena1 == cadena2:
                 return ("Las cadenas son iguales")
             else:
